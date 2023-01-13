@@ -6,7 +6,7 @@ Content-Type: application/json
     "userName": "testuser",
     "firstName":"Test1",
     "lastName":"Test",
-    "email": "test@gmail.com",
+    "email": "ay@gmail.com",
     "password": "12345678",
     "passwordConfirm":"12345678",
     "searches":[],
@@ -17,6 +17,19 @@ Content-Type: application/json
 
 POST http://localhost:8000/api/auth/login
 Content-Type: application/json
+
+{
+    "email":"aaron.aa@me.com",
+    "password":"12345678"
+}
+
+#####
+
+#####
+
+POST https://priceit-auth.herokuapp.com/api/auth/login
+Content-Type: application/json
+
 {
     "email":"aaron.aa@me.com",
     "password":"12345678"
