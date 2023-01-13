@@ -15,11 +15,16 @@ const app = express();
 // 1. Cors
 app.use(
   cors({
-    origin: ["http://localhost:5173",  "https://priceit.herokuapp.com"],
+    origin: ["http://localhost:5173", "https://priceit.herokuapp.com"],
     // origin: config.auth.origin,
     credentials: true,
   })
 );
+
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "https://priceit.herokuapp.com");
+  next();
+});
 
 // 2. Body Parser
 app.use(express.json({ limit: '10mb' }));
