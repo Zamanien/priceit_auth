@@ -3,10 +3,10 @@ POST http://localhost:8000/api/auth/register
 Content-Type: application/json
 
 {
-    "userName": "aarongmail",
-    "firstName":"Aaron",
-    "lastName":"ALAYO",
-    "email": "yolo@snap.com",
+    "userName": "testuser",
+    "firstName":"Test1",
+    "lastName":"Test",
+    "email": "test@gmail.com",
     "password": "12345678",
     "passwordConfirm":"12345678",
     "searches":[],
@@ -17,7 +17,6 @@ Content-Type: application/json
 
 POST http://localhost:8000/api/auth/login
 Content-Type: application/json
-
 {
     "email":"aaron.aa@me.com",
     "password":"12345678"
@@ -40,10 +39,10 @@ Authorization: "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsic2VhcmNo
 
 PATCH  http://localhost:8000/api/users/me/63bf632206b350caf0803adf
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsiX2lkIjoiNjNiZjYzMjIwNmIzNTBjYWYwODAzYWRmIiwidXNlck5hbWUiOiJhYXJvbmdtYWlsIiwiZmlyc3ROYW1lIjoiQWFyb24iLCJsYXN0TmFtZSI6IkFMQVlPIiwiZW1haWwiOiJhYXJvbi5hYUBtZS5jb20iLCJwYXNzd29yZCI6IiQyYSQxMiR4WEQwN0M2SkJQZUJqVC5wRVBwWS4uRHBQaEg0YUlJc0J0NFdvMUsyWktnTHZOUU1aemh2eSIsInJvbGUiOiJ1c2VyIiwic2VhcmNoZXMiOltdLCJpdGVtcyI6W10sImNyZWF0ZWRBdCI6IjIwMjMtMDEtMTJUMDE6MzI6MTguMzc2WiIsInVwZGF0ZWRBdCI6IjIwMjMtMDEtMTJUMTM6NDg6NTMuNDgxWiIsIl9fdiI6MH0sImlhdCI6MTY3MzUzMTM3NSwiZXhwIjoxNjczNTMyMjc1fQ.VGojeERbU3T1QB8jUdSg839xKg3Q_lAoxFfsYJxU_iQDVHQyW_2krLLkOYkeRdcVLmxqeaqUesXChSFsGJxg74BnHGUlYEw-ZSK8g2BZOnRBIDQU3ZTXUHyRD-f5RFmGkNVKsQSuFD4WrJna5dIzPnArhgbxdYRQ9VXEucWO9Pjsvurfs4PoqbkuUuKvW99CTe8bnedG4YWNqSIlMtWk4I4kilWnsalIucglTk7GWBzoIohSVM7ybym2RjINn5nskDUzeIamVIjQQzdOdIPwIEgGYg-sifgQsFLg1BPgB0AIMZc2QnTrM-D-xF0FfeRFP6DRKzhQ0l9IPzx9n8tRuQ
+Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsiX2lkIjoiNjNiZjYzMjIwNmIzNTBjYWYwODAzYWRmIiwidXNlck5hbWUiOiJhYXJvbmdtYWlsIiwiZmlyc3ROYW1lIjoiQWFyb24iLCJsYXN0TmFtZSI6IkFMQVlPIiwiZW1haWwiOiJhYXJvbi5hYUBtZS5jb20iLCJwYXNzd29yZCI6IiQyYSQxMiR4WEQwN0M2SkJQZUJqVC5wRVBwWS4uRHBQaEg0YUlJc0J0NFdvMUsyWktnTHZOUU1aemh2eSIsInJvbGUiOiJ1c2VyIiwic2VhcmNoZXMiOlsiaXBob25lIiwic2Ftc3VuZyJdLCJpdGVtcyI6W3siaWQiOiI1ODQ4OTE0NzY5Nzk3OTIiLCJpbWFnZSI6eyJ1cmkiOiJodHRwczovL3Njb250ZW50LmZjcGgyLTEuZm5hLmZiY2RuLm5ldC92L3Q0NS41MzI4LTQvMzE1MjQ1MTQ3XzU0NzY4NDQ0MzI0Mzg2MzJfNjc2Nzc2NzczODE2NTA2OTU5MF9uLmpwZz9zdHA9YzAuMC42MDAuNjAwYV9kc3QtanBnJl9uY19jYXQ9MTA3JmNjYj0xLTcmX25jX3NpZD1jNDg3NTkmX25jX29oYz1xUWlHSUNORHIzSUFYOFlZdXRJJl9uY19odD1zY29udGVudC5mY3BoMi0xLmZuYSZvaD0wMF9BZkFYdUdvNEZsYUNzTE5UTkpySS1LWHphRlRUVTBTOExRdDA4aFV1blp5UEt3Jm9lPTYzQzNGQ0YxIn0sIml0ZW1SZWYiOiJodHRwczovL3d3dy5mYWNlYm9vay5jb20vbWFya2V0cGxhY2UvaXRlbS81ODQ4OTE0NzY5Nzk3OTIvIiwicHJpY2UiOnsidmFsdWUiOjEzMDAsImN1cnJlbmN5Ijoia3IifSwidGl0bGUiOiJpUGhvbmUgeCAyNTYgZ2IifV0sImNyZWF0ZWRBdCI6IjIwMjMtMDEtMTJUMDE6MzI6MTguMzc2WiIsInVwZGF0ZWRBdCI6IjIwMjMtMDEtMTJUMTU6MjQ6NTIuMjQwWiIsIl9fdiI6MH0sImlhdCI6MTY3MzUzOTI2NSwiZXhwIjoxNzI3NTM5MjY1fQ.aT6EnTEmTgA6BtY2chV5PSoTI1YItuvGGa0pOhwZhTYNX0m_DxD3fjyltAYyR6_UKvj64iE2r5aBPj1kEK0uKCF-jrGUPQjNxGAcMyVRuYr_Juva9la1w6ssRAdZyaClXLyqKPqi_bUGDp6UwRxZNWeAOdJ6rJj_kY5IjxVptowA53pO5GOz6DjzXd-ELnSv8_d8Bn9-HR18hYVWYl01TbKyuYX7TnLRBNMD9r-woXGHpN2aP4F3Gz2GjG5kTGaZ444Jt1-UIKJEgDRIgBJiX7s25h5wlaK8q0Y2saVwp2uELIFYPCj8483fqLsi3p6hb_m4n5uhJwKW2SIuAFXj7A
 
 {
-    "searches":["iphone", "samsung"],
+    "searches":["iphone", "samsung", "ipad"],
     "items":[{
         "id": "584891476979792",        
         "image": {

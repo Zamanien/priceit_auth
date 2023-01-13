@@ -4,12 +4,14 @@ import morgan from 'morgan';
 import config from 'config';
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
-import mongoose from '../utils/connectDB';
 import userRouter from '../routes/user.route';
 import authRouter from '../routes/auth.route';
+import { rateLimit } from 'express-rate-limit';
+
 // import { config } from '../../config/custom-environment-variables';
 
 const app = express();
+// app.use(rateLimit)
 
 // 1. Cors
 app.use(
@@ -22,15 +24,14 @@ app.use(
 
 // Middleware
 
-// 2. Body Parser
-app.use(express.json({ limit: '50mb' }));
+// 1. Body Parser
+app.use(express.json({ limit: '10mb' }));
 
 // 3. Cookie Parser
 app.use(cookieParser());
 
 // 4. Logger
 if (process.env.NODE_ENV === 'development') app.use(morgan('dev'));
-
 // 5. Routes
 app.use('/api/users', userRouter);
 app.use('/api/auth', authRouter);

@@ -44,7 +44,7 @@ import {
     role: string;
     
     @prop()
-    searches: [];
+    searches: string[];
 
     @prop()
     items: Item[];

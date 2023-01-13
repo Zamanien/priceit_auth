@@ -1,8 +1,9 @@
 import express from 'express';
 import {
+  deleteItemHandler,
   getAllUsersHandler,
   getMeHandler,
-  updateMeHandler,
+  addItemHandler,
 } from '../controllers/user.controller';
 import { deserializeUser } from '../middleware/deserializeUser';
 import { requireUser } from '../middleware/requireUser';
@@ -18,6 +19,7 @@ router.get('/', restrictTo('admin'), getAllUsersHandler);
 // Get my info route
 router.get('/me', getMeHandler);
 
-router.patch('/me/:userId', updateMeHandler);
+router.put('/me/:userId', addItemHandler);
+router.put('/me/:userId', deleteItemHandler);
 
 export default router;
