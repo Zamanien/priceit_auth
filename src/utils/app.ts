@@ -11,25 +11,25 @@ import authRouter from '../routes/auth.route';
 
 const app = express();
 
-// Middleware
-
-// 1. Body Parser
-app.use(express.json({ limit: '50mb' }));
-
-// 2. Cookie Parser
-app.use(cookieParser());
-
-// 3. Logger
-if (process.env.NODE_ENV === 'development') app.use(morgan('dev'));
-
-// 4. Cors
+// 1. Cors
 app.use(
   cors({
     origin: config.get<string>('origin'),
-    // origin: '*',
+    // origin: config.auth.origin,
     credentials: true,
   })
 );
+
+// Middleware
+
+// 2. Body Parser
+app.use(express.json({ limit: '50mb' }));
+
+// 3. Cookie Parser
+app.use(cookieParser());
+
+// 4. Logger
+if (process.env.NODE_ENV === 'development') app.use(morgan('dev'));
 
 // 5. Routes
 app.use('/api/users', userRouter);

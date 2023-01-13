@@ -1,6 +1,7 @@
 import { config } from '../../config/custom-environment-variables';
 // import config from 'config';
 import { CookieOptions, NextFunction, Request, Response } from 'express';
+import { date } from 'zod';
 import { CreateUserInput, LoginUserInput } from '../schema/user.schema';
 import { createUser, findUser, signToken } from '../services/user.service';
 import AppError from '../utils/appError';
@@ -38,7 +39,6 @@ export const registerHandler = async (
       lastName:req.body.lastName,
       password: req.body.password,
     });
-
     res.status(201).json({
       status: 'success',
       data: {
@@ -46,6 +46,7 @@ export const registerHandler = async (
       },
     });
   } catch (err: any) {
+    console.log('ERROR IS HERE: ' + err)
     if (err.code === 11000) {
       return res.status(409).json({
         status: 'fail',
