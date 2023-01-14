@@ -9,7 +9,7 @@ import authRouter from '../routes/auth.route';
 
 const app = express();
 // app.use(rateLimit)
-
+app.set('trust proxy', 1) 
 // Middleware
 
 // 1. Cors
