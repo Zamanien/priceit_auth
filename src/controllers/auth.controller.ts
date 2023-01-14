@@ -20,7 +20,6 @@ const accessTokenCookieOptions: CookieOptions = {
   maxAge: Number(config.auth.expireIn) * 60 * 1000,
   httpOnly: true,
   secure: true,
-  domain: 'https://priceit.herokuapp.com',
   sameSite:'none'
 };
 
@@ -85,7 +84,9 @@ export const loginHandler = async (
     res.cookie('access_token', access_token, accessTokenCookieOptions);
     res.cookie('logged_in', true, {
       ...accessTokenCookieOptions,
-      httpOnly: false
+      httpOnly: true,
+      secure: true,
+      sameSite:'none'
     });
 
     // Send Access Token
